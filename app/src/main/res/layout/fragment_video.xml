@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextureView
+        android:id="@+id/rgb_texture"
+        android:layout_width="1024px"
+        android:layout_height="768px"
+        app:layout_constraintBottom_toTopOf="@+id/depth_texture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextureView
+        android:id="@+id/depth_texture"
+        android:layout_width="1024px"
+        android:layout_height="768px"
+        app:layout_constraintBottom_toTopOf="@+id/rgb_record_video_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgb_texture"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        android:id="@+id/rgb_record_video_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="RGB开始录制"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/depth_record_video_btn"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depth_texture" />
+
+    <Button
+        android:id="@+id/depth_record_video_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="DEPTH开始录制"
+        app:layout_constraintBottom_toBottomOf="@id/rgb_record_video_btn"
+        app:layout_constraintEnd_toStartOf="@+id/record_video_btn"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/rgb_record_video_btn"
+        app:layout_constraintTop_toTopOf="@id/rgb_record_video_btn" />
+
+    <Button
+        android:id="@+id/record_video_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="一键开始录制"
+        app:layout_constraintBottom_toBottomOf="@id/rgb_record_video_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/depth_record_video_btn"
+        app:layout_constraintTop_toTopOf="@id/rgb_record_video_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
